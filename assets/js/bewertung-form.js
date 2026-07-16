@@ -1,10 +1,11 @@
 // Unlisted guest review intake form. Submissions are sent directly in the
 // background via Web3Forms (https://web3forms.com) - the guest never sees
 // the email body, only a short confirmation on this page. The message
-// delivered to the host contains a human-readable summary plus two
-// ready-to-paste JSON snippets for assets/data/reviews.json and
-// assets/data/guests.json; the host reviews and pastes them in manually,
-// so guest text never publishes unmoderated.
+// delivered to the host contains a human-readable summary plus one
+// ready-to-paste JSON snippet for the shared assets/data/bewertungen.json
+// (which feeds both the homepage reviews and the guest map); the host
+// reviews and pastes it in manually, so guest text never publishes
+// unmoderated.
 const WEB3FORMS_ACCESS_KEY = "76972104-acd9-4d66-8cb2-dc374dbf2c7d";
 
 document.addEventListener("DOMContentLoaded", async () => {
@@ -88,28 +89,22 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
     const publicName = `${vorname} ${nachname.charAt(0).toUpperCase()}.`;
-    const herkunftDisplay = ort ? `${landName}, ${ort}` : landName;
     const today = new Date();
     const datum = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, "0")}`;
     const id = `gast-${today.getFullYear()}${String(today.getMonth() + 1).padStart(2, "0")}${String(today.getDate()).padStart(2, "0")}-${Math.floor(Math.random() * 900 + 100)}`;
 
-    const reviewSnippet = {
+    const entrySnippet = {
       id,
       name: publicName,
-      herkunft: herkunftDisplay,
-      datum,
-      bewertung: Number(sterne),
-      text: freitext,
-      beispiel: false,
-    };
-
-    const guestSnippet = {
-      id: `land-${id}`,
       land: landName,
       ort: ort || "",
       lat: coords.lat,
       lng: coords.lng,
+      datum,
+      bewertung: Number(sterne),
+      text: freitext,
       anzahl: Number(anzahl),
+      mitKindern: false,
       beispiel: false,
     };
 
@@ -126,12 +121,8 @@ document.addEventListener("DOMContentLoaded", async () => {
       "",
       coords.precise ? "Koordinaten: Ort gefunden (präzise)" : "Koordinaten: Landeszentrum (Ort nicht gefunden oder leer gelassen)",
       "",
-      "--- Zum Einfügen in assets/data/reviews.json ---",
-      JSON.stringify(reviewSnippet, null, 2) + ",",
-      "",
-      "--- Zum Einfügen in assets/data/guests.json ---",
-      "(Falls für dieses Land/diesen Ort bereits ein Eintrag existiert: einfach dessen \"anzahl\" erhöhen statt neu einzufügen.)",
-      JSON.stringify(guestSnippet, null, 2) + ",",
+      "--- Zum Einfügen in assets/data/bewertungen.json ---",
+      JSON.stringify(entrySnippet, null, 2) + ",",
     ];
 
     const messageBody = lines.join("\n");

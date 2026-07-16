@@ -1,6 +1,7 @@
-// Renders the "Unsere Gäste" world map from assets/data/guests.json using Leaflet.
-// To update: edit that JSON file (land, ort, lat, lng, anzahl) and push - the map
-// picks up changes automatically, no code changes needed.
+// Renders the "Unsere Gäste" world map from the shared assets/data/bewertungen.json
+// using Leaflet. The same file also feeds the review cards on the homepage -
+// only entries with lat/lng get a pin here. To update: edit that JSON file
+// and push - the map picks up changes automatically, no code changes needed.
 document.addEventListener("DOMContentLoaded", async () => {
   const mapEl = document.getElementById("guests-map");
   if (!mapEl || typeof L === "undefined") return;
@@ -21,8 +22,9 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
 
   try {
-    const res = await fetch("../assets/data/guests.json", { cache: "no-store" });
-    const guests = await res.json();
+    const res = await fetch("../assets/data/bewertungen.json", { cache: "no-store" });
+    const all = await res.json();
+    const guests = Array.isArray(all) ? all.filter((g) => g.lat != null && g.lng != null) : [];
 
     let totalGuests = 0;
     const countries = new Set();
@@ -33,8 +35,10 @@ document.addEventListener("DOMContentLoaded", async () => {
       const color = g.beispiel ? "#8a9a9d" : "#c08a45";
       const marker = L.marker([g.lat, g.lng], { icon: pinIcon(color) }).addTo(map);
       const badge = g.beispiel ? " <em>(Beispiel)</em>" : "";
+      const who = g.name ? `${escapeHtml(g.name)} &middot; ` : "";
+      const stars = g.bewertung ? "★".repeat(g.bewertung) : "";
       marker.bindPopup(
-        `<strong>${escapeHtml(g.land)}</strong>${g.ort ? " – " + escapeHtml(g.ort) : ""}<br>${g.anzahl || 0} Gast/Gäste${badge}`
+        `${who}<strong>${escapeHtml(g.land)}</strong>${g.ort ? " – " + escapeHtml(g.ort) : ""}<br>${g.anzahl || 0} Gast/Gäste ${stars}${badge}`
       );
     });
 
