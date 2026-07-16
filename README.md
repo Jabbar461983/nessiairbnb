@@ -28,9 +28,13 @@ Statische, mehrseitige Website für das Familienzimmer in Kräiligen. Kein Build
 
 ## Bewertungen von Gästen (nicht öffentlich verlinkte Seite)
 
-`/bewertungen/` ist eine eigenständige Seite mit einem Formular für Gäste (Vorname, Nachname, Herkunftsland, Anzahl Gäste, Sternebewertung, Freitext). Sie ist **nirgends in der Navigation verlinkt** und trägt `<meta name="robots" content="noindex, nofollow">` sowie einen Eintrag in `robots.txt` &ndash; das hält sie aus Suchmaschinen heraus, ist aber **kein Zugriffsschutz**: Wer die URL kennt, kann die Seite trotzdem öffnen. Für echten Zugriffsschutz wäre ein Login/Passwort nötig, was auf einer rein statischen Website ohne Server nicht sauber umsetzbar ist.
+`/bewertungen/` ist eine eigenständige Seite mit einem Formular für Gäste (Vorname, Nachname, Land, Stadt/Ort, Anzahl Gäste, Sternebewertung, Freitext). Sie ist **nirgends in der Navigation verlinkt** und trägt `<meta name="robots" content="noindex, nofollow">` sowie einen Eintrag in `robots.txt` &ndash; das hält sie aus Suchmaschinen heraus, ist aber **kein Zugriffsschutz**: Wer die URL kennt, kann die Seite trotzdem öffnen. Für echten Zugriffsschutz wäre ein Login/Passwort nötig, was auf einer rein statischen Website ohne Server nicht sauber umsetzbar ist.
 
-Da die Website keinen Server/keine Datenbank hat, werden Einsendungen **nicht automatisch veröffentlicht**: Das Formular öffnet eine E-Mail an ch.nessier@gmx.ch mit einer Zusammenfassung und zwei fertig formatierten JSON-Blöcken &ndash; einer zum Einfügen in `assets/data/reviews.json`, einer für `assets/data/guests.json`. Nach kurzer Prüfung genügt Copy-Paste, um die Bewertung freizuschalten. Auf der Website erscheint dabei nur Vorname + erster Buchstabe des Nachnamens (z.&nbsp;B. „Julia M.“); der volle Name bleibt in der E-Mail privat.
+Da die Website keinen eigenen Server/keine Datenbank hat, werden Einsendungen **nicht automatisch veröffentlicht**: Das Formular sendet die Angaben über [Web3Forms](https://web3forms.com) direkt im Hintergrund an ch.nessier@gmx.ch &ndash; der Gast sieht dabei nie den E-Mail-Inhalt, nur eine Bestätigung auf der Seite. Die eingehende Nachricht enthält eine Zusammenfassung sowie zwei fertig formatierte JSON-Blöcke &ndash; einer zum Einfügen in `assets/data/reviews.json`, einer für `assets/data/guests.json`. Nach kurzer Prüfung genügt Copy-Paste, um die Bewertung freizuschalten. Auf der Website erscheint dabei nur Vorname + erster Buchstabe des Nachnamens (z.&nbsp;B. „Julia M.“); der volle Name bleibt privat.
+
+Für die Ortsangabe wird bei Eingabe einer Stadt automatisch versucht, über die freie OpenStreetMap-Nominatim-Geokodierung präzise Koordinaten zu ermitteln (statt nur das Landeszentrum zu verwenden); gelingt das nicht, liefert die Nachricht einen Hinweis, dass die Koordinaten im Landeszentrum liegen.
+
+**Einrichtung:** In `assets/js/bewertung-form.js` muss einmalig `WEB3FORMS_ACCESS_KEY` mit dem eigenen, kostenlosen Access Key von web3forms.com ersetzt werden.
 
 ## Kontaktformular
 
