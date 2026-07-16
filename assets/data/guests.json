@@ -9,21 +9,156 @@
     "beispiel": false
   },
   {
-    "id": "beispiel-de",
-    "land": "Beispiel-Land 1",
-    "ort": "",
-    "lat": 51.1657,
-    "lng": 10.4515,
-    "anzahl": 2,
-    "beispiel": true
+    "id": "gast-martina-appenzell",
+    "land": "Schweiz",
+    "ort": "Appenzell",
+    "lat": 47.3306,
+    "lng": 9.4103,
+    "anzahl": 1,
+    "beispiel": false
   },
   {
-    "id": "beispiel-fr",
-    "land": "Beispiel-Land 2",
-    "ort": "",
-    "lat": 46.2276,
-    "lng": 2.2137,
+    "id": "gast-eiken",
+    "land": "Schweiz",
+    "ort": "Eiken",
+    "lat": 47.4931,
+    "lng": 7.9319,
+    "anzahl": 3,
+    "beispiel": false
+  },
+  {
+    "id": "gast-au",
+    "land": "Schweiz",
+    "ort": "Au",
+    "lat": 47.226,
+    "lng": 8.686,
     "anzahl": 1,
-    "beispiel": true
+    "beispiel": false
+  },
+  {
+    "id": "gast-thurgau",
+    "land": "Schweiz",
+    "ort": "Thurgau",
+    "lat": 47.6,
+    "lng": 9.1,
+    "anzahl": 1,
+    "beispiel": false
+  },
+  {
+    "id": "gast-fetigny",
+    "land": "Schweiz",
+    "ort": "Fétigny",
+    "lat": 46.7333,
+    "lng": 6.9333,
+    "anzahl": 1,
+    "beispiel": false
+  },
+  {
+    "id": "gast-hirschthal",
+    "land": "Schweiz",
+    "ort": "Hirschthal",
+    "lat": 47.293,
+    "lng": 7.907,
+    "anzahl": 1,
+    "beispiel": false
+  },
+  {
+    "id": "gast-muensterlingen",
+    "land": "Schweiz",
+    "ort": "Münsterlingen",
+    "lat": 47.6167,
+    "lng": 9.2167,
+    "anzahl": 1,
+    "beispiel": false
+  },
+  {
+    "id": "gast-zuerich",
+    "land": "Schweiz",
+    "ort": "Zürich",
+    "lat": 47.3769,
+    "lng": 8.5417,
+    "anzahl": 1,
+    "beispiel": false
+  },
+  {
+    "id": "gast-sanjuan-puertorico",
+    "land": "Puerto Rico",
+    "ort": "San Juan",
+    "lat": 18.4655,
+    "lng": -66.1057,
+    "anzahl": 1,
+    "beispiel": false
+  },
+  {
+    "id": "gast-zollikerberg",
+    "land": "Schweiz",
+    "ort": "Zollikerberg",
+    "lat": 47.3378,
+    "lng": 8.5983,
+    "anzahl": 1,
+    "beispiel": false
+  },
+  {
+    "id": "gast-aston-jonction-kanada",
+    "land": "Kanada",
+    "ort": "Aston-Jonction",
+    "lat": 46.17,
+    "lng": -72.13,
+    "anzahl": 4,
+    "beispiel": false
+  },
+  {
+    "id": "gast-frankreich",
+    "land": "Frankreich",
+    "ort": "",
+    "lat": 46.6,
+    "lng": 2.2,
+    "anzahl": 1,
+    "beispiel": false
+  },
+  {
+    "id": "gast-lohn-ammannsegg",
+    "land": "Schweiz",
+    "ort": "Lohn-Ammannsegg",
+    "lat": 47.166,
+    "lng": 7.567,
+    "anzahl": 1,
+    "beispiel": false
+  },
+  {
+    "id": "gast-italien",
+    "land": "Italien",
+    "ort": "",
+    "lat": 42.8,
+    "lng": 12.6,
+    "anzahl": 1,
+    "beispiel": false
+  },
+  {
+    "id": "gast-genf",
+    "land": "Schweiz",
+    "ort": "Genf",
+    "lat": 46.2044,
+    "lng": 6.1432,
+    "anzahl": 1,
+    "beispiel": false
+  },
+  {
+    "id": "gast-vereinigtes-koenigreich",
+    "land": "Vereinigtes Königreich",
+    "ort": "",
+    "lat": 54.0,
+    "lng": -2.0,
+    "anzahl": 1,
+    "beispiel": false
+  },
+  {
+    "id": "gast-kyjiw-ukraine",
+    "land": "Ukraine",
+    "ort": "Kyjiw",
+    "lat": 50.4501,
+    "lng": 30.5234,
+    "anzahl": 1,
+    "beispiel": false
   }
 ]
