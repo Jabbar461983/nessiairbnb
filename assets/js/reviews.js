@@ -7,9 +7,10 @@ document.addEventListener("DOMContentLoaded", async () => {
   const wrap = document.getElementById("reviews-wrap");
   if (!wrap) return;
   const moreWrap = document.getElementById("reviews-more");
+  const dataSrc = wrap.dataset.src || "assets/data/bewertungen.json";
 
   try {
-    const res = await fetch("assets/data/bewertungen.json", { cache: "no-store" });
+    const res = await fetch(dataSrc, { cache: "no-store" });
     const all = await res.json();
     const reviews = Array.isArray(all) ? all.filter((r) => r.text && r.text.trim()) : [];
 
@@ -37,8 +38,6 @@ document.addEventListener("DOMContentLoaded", async () => {
       const remaining = reviews.slice(REVIEWS_INITIAL_COUNT);
       const btn = document.createElement("button");
       btn.className = "btn btn-outline";
-      btn.style.color = "var(--c-dark)";
-      btn.style.borderColor = "var(--c-dark)";
       btn.textContent = `${remaining.length} weitere Bewertungen anzeigen`;
       btn.addEventListener("click", () => {
         wrap.insertAdjacentHTML("beforeend", remaining.map(renderCard).join(""));
