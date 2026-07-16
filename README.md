@@ -26,11 +26,9 @@ Statische, mehrseitige Website für das Familienzimmer in Kräiligen. Kein Build
 - **Gästekarte (Unsere Gäste):** `assets/data/guests.json` bearbeiten. Jeder Eintrag enthält `land`, `ort`, `lat`, `lng` (Koordinaten) und `anzahl`. Auch hier markiert `"beispiel": true` Platzhalterdaten.
 - **Zimmerfotos:** Dateien in `assets/img/zimmer/` austauschen (gleicher Dateiname behalten oder die `<img>`-Pfade in `zimmer/index.html` anpassen). Aktuell liegen dort gestaltete Platzhaltergrafiken.
 
-## Kontaktformular aktivieren
+## Kontaktformular
 
-Das Formular auf `/kontakt/` sendet über [Formspree](https://formspree.io) an **ch.nessier@gmx.ch**, ganz ohne eigenen Server.
-
-Bei der **ersten** Einsendung schickt Formspree eine Bestätigungs-E-Mail an ch.nessier@gmx.ch &ndash; der Link darin muss einmalig angeklickt werden, danach werden alle weiteren Formular-Anfragen automatisch zugestellt. Für höhere Versandmengen oder mehr Kontrolle lohnt sich ein kostenloses Formspree-Konto mit eigener Formular-ID (dann `action` in `kontakt/index.html` auf `https://formspree.io/f/<form-id>` anpassen).
+Das Formular auf `/kontakt/` nutzt keinen Drittanbieter und keinen eigenen Server: Beim Absenden öffnet sich per `mailto:`-Link direkt das E-Mail-Programm des Besuchers mit einer vorausgefüllten Nachricht an **ch.nessier@gmx.ch**. Der Besuch muss die E-Mail in seinem Programm nur noch abschicken. Die Logik dazu steckt in `assets/js/contact-form.js`.
 
 ## Lageplan
 

@@ -41,9 +41,7 @@
   <div class="container">
     <div class="grid grid-2" style="align-items: flex-start;">
       <div class="card">
-        <form id="contact-form" action="https://formspree.io/ch.nessier@gmx.ch" method="POST">
-          <input type="hidden" name="_subject" value="Neue Anfrage über NessiAirBnB.ch">
-          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+        <form id="contact-form">
           <div class="form-grid">
             <div>
               <label for="name">Name *</label>
@@ -74,8 +72,9 @@
               <textarea id="nachricht" name="Nachricht" required placeholder="Erzählen Sie uns kurz von Ihrem geplanten Aufenthalt..."></textarea>
             </div>
           </div>
-          <button class="btn btn-primary" type="submit" style="margin-top: 20px;">Nachricht senden</button>
+          <button class="btn btn-primary" type="submit" style="margin-top: 20px;">E-Mail öffnen &amp; senden</button>
           <div id="form-status" class="form-status"></div>
+          <p class="reviews-note" style="margin-top: 12px; color: var(--c-text-muted);">Beim Klick öffnet sich Ihr E-Mail-Programm mit einer vorausgefüllten Nachricht an ch.nessier@gmx.ch &ndash; zum Versenden dort einfach auf „Senden&ldquo; klicken.</p>
         </form>
       </div>
 
