@@ -5,7 +5,7 @@
 // ready-to-paste JSON snippets for assets/data/reviews.json and
 // assets/data/guests.json; the host reviews and pastes them in manually,
 // so guest text never publishes unmoderated.
-const WEB3FORMS_ACCESS_KEY = "YOUR_ACCESS_KEY_HERE";
+const WEB3FORMS_ACCESS_KEY = "76972104-acd9-4d66-8cb2-dc374dbf2c7d";
 
 document.addEventListener("DOMContentLoaded", async () => {
   const form = document.getElementById("bewertung-form");
