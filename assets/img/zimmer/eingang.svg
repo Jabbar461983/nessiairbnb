@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-labelledby="t4">
+<title id="t4">Eingang Untergeschoss</title>
+<defs>
+<linearGradient id="g4" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#3d4d4f"/>
+<stop offset="1" stop-color="#0d1e1c"/>
+</linearGradient>
+</defs>
+<rect width="800" height="600" fill="url(#g4)"/>
+<g stroke="#f7f5f1" stroke-width="10" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.92">
+<path d="M330 420 v-140 a70 70 0 0 1 140 0 v140 Z"/>
+<circle cx="440" cy="350" r="6" fill="#f7f5f1" stroke="none"/>
+<line x1="300" y1="420" x2="500" y2="420"/>
+</g>
+</svg>

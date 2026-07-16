@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Unsere Gäste &ndash; NessiAirBnB</title>
+<meta name="description" content="Von wo unsere Gäste anreisen &ndash; eine Weltkarte mit den Herkunftsländern unserer bisherigen Gäste.">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon-32.png">
+<link rel="apple-touch-icon" href="../assets/img/favicon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav">
+    <a class="nav-brand" href="../"><img src="../assets/img/logo-mark.png" alt="NessiAirBnB Logo"> NessiAirBnB</a>
+    <button class="nav-toggle" aria-label="Menü öffnen" aria-expanded="false">&#9776;</button>
+    <ul class="nav-links">
+      <li><a href="../">Home</a></li>
+      <li><a href="../wersindwir/">Wer sind wir</a></li>
+      <li><a href="../lageplan/">Lageplan</a></li>
+      <li><a href="../zimmer/">Das Zimmer</a></li>
+      <li><a href="./" class="active">Unsere Gäste</a></li>
+      <li><a href="../kontakt/">Kontakt</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow">Von nah und fern</span>
+    <h1>Unsere Gäste</h1>
+    <p>Diese Weltkarte zeigt, aus welchen Ländern unsere Gäste zu uns nach Kräiligen reisen.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div id="guests-map"></div>
+    <p class="map-note">Grau markierte Nadeln sind Beispieldaten. Die Karte wird aus <code>assets/data/guests.json</code> geladen &ndash; neue Gäste-Herkünfte lassen sich dort jederzeit ergänzen, ohne Programmierkenntnisse.</p>
+    <div class="stat-strip">
+      <div class="stat"><b id="stat-guests">&ndash;</b><span>Gäste erfasst</span></div>
+      <div class="stat"><b id="stat-countries">&ndash;</b><span>Herkunftsländer</span></div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>NessiAirBnB</h4>
+        <p>Gemütliches Familienzimmer in Kräiligen &ndash; Ihr ruhiger Rückzugsort im Berner Mittelland.</p>
+      </div>
+      <div>
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="../">Home</a></li>
+          <li><a href="../wersindwir/">Wer sind wir</a></li>
+          <li><a href="../lageplan/">Lageplan</a></li>
+          <li><a href="../zimmer/">Das Zimmer</a></li>
+          <li><a href="./">Unsere Gäste</a></li>
+          <li><a href="../kontakt/">Kontakt</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Kontakt</h4>
+        <ul>
+          <li>Stegmattweg 8b, 3315 Kräiligen</li>
+          <li><a href="tel:+41793679995">+41 79 367 99 95</a></li>
+          <li><a href="mailto:ch.nessier@gmx.ch">ch.nessier@gmx.ch</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="year"></span> NessiAirBnB &ndash; Christian, Noemie &amp; Leo</span>
+      <span>Familienzimmer in Kräiligen, Schweiz</span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script src="../assets/js/main.js"></script>
+<script src="../assets/js/guests-map.js"></script>
+</body>
+</html>

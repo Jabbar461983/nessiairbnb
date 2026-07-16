@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-labelledby="t2">
+<title id="t2">Privates Badezimmer</title>
+<defs>
+<linearGradient id="g2" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#5a6d71"/>
+<stop offset="1" stop-color="#0d1e1c"/>
+</linearGradient>
+</defs>
+<rect width="800" height="600" fill="url(#g2)"/>
+<g stroke="#f7f5f1" stroke-width="10" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.92">
+<path d="M260 330 h280 a10 10 0 0 1 10 10 v10 a70 70 0 0 1-70 70 h-160 a70 70 0 0 1-70-70 v-10 a10 10 0 0 1 10-10 Z"/>
+<path d="M280 330 v-70 a30 30 0 0 1 30-30"/>
+<circle cx="470" cy="270" r="14"/>
+<line x1="330" y1="440" x2="330" y2="470"/>
+<line x1="470" y1="440" x2="470" y2="470"/>
+</g>
+</svg>

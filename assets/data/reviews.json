@@ -1,0 +1,20 @@
+[
+  {
+    "id": "beispiel-1",
+    "name": "Vorname N.",
+    "herkunft": "Beispiel-Land",
+    "datum": "2026-01",
+    "bewertung": 5,
+    "text": "Dies ist ein Beispieltext. Ersetzen oder ergänzen Sie diesen Eintrag in assets/data/reviews.json durch echte Gästebewertungen.",
+    "beispiel": true
+  },
+  {
+    "id": "beispiel-2",
+    "name": "Vorname N.",
+    "herkunft": "Beispiel-Land",
+    "datum": "2026-02",
+    "bewertung": 5,
+    "text": "Ein zweiter Platzhalter-Eintrag. Jede Bewertung ist ein einfaches Objekt in dieser JSON-Datei – kein Programmieren nötig.",
+    "beispiel": true
+  }
+]

@@ -1,0 +1,29 @@
+[
+  {
+    "id": "basis-kraeiligen",
+    "land": "Schweiz",
+    "ort": "Kräiligen (unser Zuhause)",
+    "lat": 47.1425,
+    "lng": 7.5875,
+    "anzahl": 1,
+    "beispiel": false
+  },
+  {
+    "id": "beispiel-de",
+    "land": "Beispiel-Land 1",
+    "ort": "",
+    "lat": 51.1657,
+    "lng": 10.4515,
+    "anzahl": 2,
+    "beispiel": true
+  },
+  {
+    "id": "beispiel-fr",
+    "land": "Beispiel-Land 2",
+    "ort": "",
+    "lat": 46.2276,
+    "lng": 2.2137,
+    "anzahl": 1,
+    "beispiel": true
+  }
+]
