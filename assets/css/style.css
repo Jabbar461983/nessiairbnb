@@ -443,6 +443,44 @@ textarea { resize: vertical; min-height: 130px; }
   color: var(--c-dark);
 }
 
+/* Star rating widget */
+.star-rating {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  gap: 4px;
+}
+.star-rating input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.star-rating label {
+  font-size: 1.9rem;
+  line-height: 1;
+  color: #d8d3c6;
+  cursor: pointer;
+  margin: 0;
+  transition: color 0.15s ease;
+}
+.star-rating input:checked ~ label,
+.star-rating label:hover,
+.star-rating label:hover ~ label {
+  color: var(--c-accent);
+}
+
+/* Unlisted-page notice */
+.notice-box {
+  background: rgba(192,138,69,0.12);
+  border: 1px solid rgba(192,138,69,0.35);
+  border-radius: var(--radius-sm);
+  padding: 16px 18px;
+  font-size: 0.9rem;
+  color: var(--c-text);
+  margin-bottom: 28px;
+}
+
 /* Footer */
 .site-footer {
   background: var(--c-dark);

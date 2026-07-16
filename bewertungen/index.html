@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bewertungen &ndash; NessiAirBnB</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon-32.png">
+<link rel="apple-touch-icon" href="../assets/img/favicon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav">
+    <a class="nav-brand" href="../"><img src="../assets/img/logo-mark.png" alt="NessiAirBnB Logo"> NessiAirBnB</a>
+    <button class="nav-toggle" aria-label="Menü öffnen" aria-expanded="false">&#9776;</button>
+    <ul class="nav-links">
+      <li><a href="../">Home</a></li>
+      <li><a href="../wersindwir/">Wer sind wir</a></li>
+      <li><a href="../lageplan/">Lageplan</a></li>
+      <li><a href="../zimmer/">Das Zimmer</a></li>
+      <li><a href="../gaeste/">Unsere Gäste</a></li>
+      <li><a href="../kontakt/">Kontakt</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow">Für unsere Gäste</span>
+    <h1>Bewertungen</h1>
+    <p>Vielen Dank, dass Sie sich die Zeit nehmen, uns eine Bewertung zu hinterlassen! Diese Seite ist nicht öffentlich verlinkt &ndash; Sie haben den Link direkt von uns erhalten.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="grid grid-2" style="align-items: flex-start;">
+      <div class="card">
+        <div class="notice-box">
+          Auf der Website wird nur Ihr <strong>Vorname und der erste Buchstabe Ihres Nachnamens</strong> veröffentlicht (z.&nbsp;B. „Julia M.“), zusammen mit Ihrem Herkunftsland auf unserer Gästekarte. Ihr vollständiger Name und Ihre Nachricht gehen zunächst nur per E-Mail an uns &ndash; wir schalten Ihre Bewertung anschliessend frei.
+        </div>
+        <form id="bewertung-form">
+          <div class="form-grid">
+            <div>
+              <label for="vorname">Vorname *</label>
+              <input type="text" id="vorname" required>
+            </div>
+            <div>
+              <label for="nachname">Nachname *</label>
+              <input type="text" id="nachname" required>
+            </div>
+            <div>
+              <label for="herkunft">Woher kommen Sie? *</label>
+              <select id="herkunft" required>
+                <option value="" disabled selected>Bitte wählen&hellip;</option>
+              </select>
+            </div>
+            <div>
+              <label for="anzahl">Anzahl Gäste *</label>
+              <input type="number" id="anzahl" min="1" value="1" required>
+            </div>
+            <div class="full" id="herkunft-other-wrap" style="display:none;">
+              <label for="herkunft-other">Land (falls nicht in der Liste)</label>
+              <input type="text" id="herkunft-other" placeholder="z.B. Ihr Heimatland">
+            </div>
+            <div class="full">
+              <label>Wie hat es Ihnen gefallen? *</label>
+              <div class="star-rating">
+                <input type="radio" id="star5" name="sterne" value="5"><label for="star5">★</label>
+                <input type="radio" id="star4" name="sterne" value="4"><label for="star4">★</label>
+                <input type="radio" id="star3" name="sterne" value="3"><label for="star3">★</label>
+                <input type="radio" id="star2" name="sterne" value="2"><label for="star2">★</label>
+                <input type="radio" id="star1" name="sterne" value="1"><label for="star1">★</label>
+              </div>
+            </div>
+            <div class="full">
+              <label for="freitext">Ihre Bewertung *</label>
+              <textarea id="freitext" required placeholder="Erzählen Sie uns von Ihrem Aufenthalt..."></textarea>
+            </div>
+          </div>
+          <button class="btn btn-primary" type="submit" style="margin-top: 20px;">Bewertung senden</button>
+          <div id="form-status" class="form-status"></div>
+          <p class="reviews-note" style="margin-top: 12px; color: var(--c-text-muted);">Beim Klick öffnet sich Ihr E-Mail-Programm mit Ihrer Bewertung, adressiert an uns &ndash; zum Absenden dort einfach auf „Senden&ldquo; klicken.</p>
+        </form>
+      </div>
+
+      <div>
+        <h2>Vielen Dank!</h2>
+        <p>Ihre Rückmeldung hilft uns, unser Zimmer stetig zu verbessern, und zeigt zukünftigen Gästen, wie es bei uns ist. Wir freuen uns über jede Bewertung &ndash; egal ob kurz oder ausführlich.</p>
+        <p>Bei Fragen erreichen Sie uns jederzeit direkt:</p>
+        <div class="contact-alt">
+          <a href="mailto:ch.nessier@gmx.ch">✉️ ch.nessier@gmx.ch</a>
+          <a href="tel:+41793679995">📞 +41 79 367 99 95</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>NessiAirBnB</h4>
+        <p>Gemütliches Familienzimmer in Kräiligen &ndash; Ihr ruhiger Rückzugsort im Berner Mittelland.</p>
+      </div>
+      <div>
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="../">Home</a></li>
+          <li><a href="../wersindwir/">Wer sind wir</a></li>
+          <li><a href="../lageplan/">Lageplan</a></li>
+          <li><a href="../zimmer/">Das Zimmer</a></li>
+          <li><a href="../gaeste/">Unsere Gäste</a></li>
+          <li><a href="../kontakt/">Kontakt</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Kontakt</h4>
+        <ul>
+          <li>Stegmattweg 8b, 3315 Kräiligen</li>
+          <li><a href="tel:+41793679995">+41 79 367 99 95</a></li>
+          <li><a href="mailto:ch.nessier@gmx.ch">ch.nessier@gmx.ch</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="year"></span> NessiAirBnB &ndash; Christian, Noemie &amp; Leo</span>
+      <span>Familienzimmer in Kräiligen, Schweiz</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/js/main.js"></script>
+<script src="../assets/js/bewertung-form.js"></script>
+</body>
+</html>
