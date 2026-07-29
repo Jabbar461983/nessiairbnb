@@ -13,22 +13,26 @@
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-
 <header class="site-header">
   <nav class="nav">
     <a class="nav-brand" href="./"><img src="assets/img/logo-mark.png" alt="NessiAirBnB Logo"> NessiAirBnB</a>
-    <button class="nav-toggle" aria-label="Menü öffnen" aria-expanded="false">&#9776;</button>
-    <ul class="nav-links">
-      <li><a href="./" class="active">Home</a></li>
-      <li><a href="wersindwir/">Wer sind wir</a></li>
-      <li><a href="lageplan/">Lageplan</a></li>
-      <li><a href="zimmer/">Das Zimmer</a></li>
-      <li><a href="gaeste/">Unsere Gäste</a></li>
-      <li><a href="kontakt/">Kontakt</a></li>
-    </ul>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="./" class="active">Home</a></li>
+        <li><a href="wersindwir/">Wer sind wir</a></li>
+        <li><a href="lageplan/">Lageplan</a></li>
+        <li><a href="zimmer/">Das Zimmer</a></li>
+        <li><a href="gaeste/">Unsere Gäste</a></li>
+        <li><a href="kontakt/">Kontakt</a></li>
+      </ul>
+      <div class="lang-switch">
+        <a href="./" class="lang-flag active" aria-label="Deutsch" title="Deutsch">🇩🇪</a>
+        <a href="en/" class="lang-flag" aria-label="English" title="English">🇬🇧</a>
+      </div>
+      <button class="nav-toggle" aria-label="Menü öffnen" aria-expanded="false">&#9776;</button>
+    </div>
   </nav>
 </header>
-
 <section class="hero">
   <div class="container">
     <div>
@@ -50,7 +54,6 @@
     </div>
   </div>
 </section>
-
 <section class="section">
   <div class="container">
     <span class="eyebrow">Auf einen Blick</span>
@@ -74,7 +77,6 @@
     </div>
   </div>
 </section>
-
 <section class="section section--dark">
   <div class="container">
     <span class="eyebrow">Stimmen unserer Gäste</span>
@@ -86,7 +88,6 @@
     <p class="reviews-note">Diese Kommentare werden laufend gepflegt und lassen sich jederzeit in <code>assets/data/bewertungen.json</code> aktualisieren.</p>
   </div>
 </section>
-
 <section class="section section--muted">
   <div class="container text-center">
     <h2>Neugierig geworden?</h2>
@@ -97,7 +98,6 @@
     </div>
   </div>
 </section>
-
 <footer class="site-footer">
   <div class="container">
     <div class="footer-grid">
@@ -131,7 +131,6 @@
     </div>
   </div>
 </footer>
-
 <script src="assets/js/main.js"></script>
 <script src="assets/js/reviews.js"></script>
 </body>

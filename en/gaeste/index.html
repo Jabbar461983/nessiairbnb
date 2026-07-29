@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Our Guests &ndash; NessiAirBnB</title>
+<meta name="description" content="Where our guests travel from &ndash; a world map with the home countries of our past guests.">
+<link rel="icon" type="image/png" sizes="32x32" href="../../assets/img/favicon-32.png">
+<link rel="apple-touch-icon" href="../../assets/img/favicon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/css/style.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+</head>
+<body>
+<header class="site-header">
+  <nav class="nav">
+    <a class="nav-brand" href="../"><img src="../../assets/img/logo-mark.png" alt="NessiAirBnB Logo"> NessiAirBnB</a>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="../">Home</a></li>
+        <li><a href="../wersindwir/">Who we are</a></li>
+        <li><a href="../lageplan/">Location</a></li>
+        <li><a href="../zimmer/">The Room</a></li>
+        <li><a href="./" class="active">Our Guests</a></li>
+        <li><a href="../kontakt/">Contact</a></li>
+      </ul>
+      <div class="lang-switch">
+        <a href="../../gaeste/" class="lang-flag" aria-label="Deutsch" title="Deutsch">🇩🇪</a>
+        <a href="./" class="lang-flag active" aria-label="English" title="English">🇬🇧</a>
+      </div>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">&#9776;</button>
+    </div>
+  </nav>
+</header>
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow">From near and far</span>
+    <h1>Our Guests</h1>
+    <p>This world map shows which countries our guests travel from to visit us in Kräiligen.</p>
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <div id="guests-map" data-src="../../assets/data/bewertungen.json"></div>
+    <div class="stat-strip">
+      <div class="stat"><b id="stat-guests">&ndash;</b><span>Guests recorded</span></div>
+      <div class="stat"><b id="stat-countries">&ndash;</b><span>Countries of origin</span></div>
+    </div>
+  </div>
+</section>
+<section class="section section--dark">
+  <div class="container">
+    <span class="eyebrow">Guest voices</span>
+    <h2>What our guests say</h2>
+    <div id="reviews-wrap" class="reviews-wrap" data-src="../../assets/data/bewertungen.json" aria-live="polite">
+      <p class="reviews-note">Loading reviews&hellip;</p>
+    </div>
+    <div id="reviews-more" style="margin-top: 20px;"></div>
+  </div>
+</section>
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>NessiAirBnB</h4>
+        <p>Cosy family room in Kräiligen &ndash; your quiet retreat in the Bern Mittelland.</p>
+      </div>
+      <div>
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="../">Home</a></li>
+          <li><a href="../wersindwir/">Who we are</a></li>
+          <li><a href="../lageplan/">Location</a></li>
+          <li><a href="../zimmer/">The Room</a></li>
+          <li><a href="./">Our Guests</a></li>
+          <li><a href="../kontakt/">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li>Stegmattweg 8b, 3315 Kräiligen</li>
+          <li><a href="tel:+41793679995">+41 79 367 99 95</a></li>
+          <li><a href="mailto:ch.nessier@gmx.ch">ch.nessier@gmx.ch</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="year"></span> NessiAirBnB &ndash; Christian, Noemie &amp; Leo</span>
+      <span>Family room in Kräiligen, Switzerland</span>
+    </div>
+  </div>
+</footer>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script src="../../assets/js/main.js"></script>
+<script src="../../assets/js/guests-map.js"></script>
+<script src="../../assets/js/reviews.js"></script>
+</body>
+</html>

@@ -5,17 +5,39 @@
 // ready-to-paste JSON snippet for the shared assets/data/bewertungen.json
 // (which feeds both the homepage reviews and the guest map); the host
 // reviews and pastes it in manually, so guest text never publishes
-// unmoderated.
+// unmoderated. UI strings switch based on <html lang>; the country dropdown
+// list stays in German (assets/data/countries.json) on both language
+// versions, since it also doubles as the canonical value stored in the
+// shared data file.
 const WEB3FORMS_ACCESS_KEY = "76972104-acd9-4d66-8cb2-dc374dbf2c7d";
+const BW_IS_EN = document.documentElement.lang === "en";
+const BW_T = BW_IS_EN
+  ? {
+      otherLand: "Other country (specify below)",
+      required: "Please fill in all fields and select a star rating.",
+      sending: "Sending...",
+      submit: "Send review",
+      success: "Thank you for your review! It has been sent to us.",
+      error: 'The review could not be sent automatically. Please write to us directly at <a href="mailto:ch.nessier@gmx.ch">ch.nessier@gmx.ch</a>.',
+    }
+  : {
+      otherLand: "Anderes Land (unten angeben)",
+      required: "Bitte füllen Sie alle Felder aus und wählen Sie eine Sternebewertung.",
+      sending: "Wird gesendet...",
+      submit: "Bewertung senden",
+      success: "Vielen Dank für Ihre Bewertung! Sie wurde an uns übermittelt.",
+      error: 'Die Bewertung konnte nicht automatisch gesendet werden. Bitte schreiben Sie uns direkt an <a href="mailto:ch.nessier@gmx.ch">ch.nessier@gmx.ch</a>.',
+    };
 
 document.addEventListener("DOMContentLoaded", async () => {
   const form = document.getElementById("bewertung-form");
   if (!form) return;
 
   const select = document.getElementById("herkunft");
+  const countriesSrc = select.dataset.src || "../assets/data/countries.json";
   let countries = [];
   try {
-    const res = await fetch("../assets/data/countries.json", { cache: "no-store" });
+    const res = await fetch(countriesSrc, { cache: "no-store" });
     countries = await res.json();
     countries.forEach((c) => {
       const opt = document.createElement("option");
@@ -25,7 +47,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
     const other = document.createElement("option");
     other.value = "__other__";
-    other.textContent = "Anderes Land (unten angeben)";
+    other.textContent = BW_T.otherLand;
     select.appendChild(other);
   } catch (e) {
     console.error("Länderliste konnte nicht geladen werden", e);
@@ -72,14 +94,14 @@ document.addEventListener("DOMContentLoaded", async () => {
     const landName = select.value === "__other__" ? otherLand : select.value;
 
     if (!vorname || !nachname || !landName || !sterne || !freitext) {
-      status.textContent = "Bitte füllen Sie alle Felder aus und wählen Sie eine Sternebewertung.";
+      status.textContent = BW_T.required;
       status.className = "form-status show err";
       return;
     }
 
     status.className = "form-status";
     submitBtn.disabled = true;
-    submitBtn.textContent = "Wird gesendet...";
+    submitBtn.textContent = BW_T.sending;
 
     const countryMatch = countries.find((c) => c.name === landName);
     let coords = countryMatch ? { lat: countryMatch.lat, lng: countryMatch.lng, precise: false } : { lat: null, lng: null, precise: false };
@@ -142,18 +164,16 @@ document.addEventListener("DOMContentLoaded", async () => {
       const data = await res.json();
       if (!res.ok || !data.success) throw new Error("web3forms-failed");
 
-      status.textContent = "Vielen Dank für Ihre Bewertung! Sie wurde an uns übermittelt.";
+      status.textContent = BW_T.success;
       status.className = "form-status show ok";
       form.reset();
       otherWrap.style.display = "none";
     } catch (err) {
-      status.innerHTML =
-        "Die Bewertung konnte nicht automatisch gesendet werden. Bitte schreiben Sie uns direkt an " +
-        '<a href="mailto:ch.nessier@gmx.ch">ch.nessier@gmx.ch</a>.';
+      status.innerHTML = BW_T.error;
       status.classList.add("show", "err");
     } finally {
       submitBtn.disabled = false;
-      submitBtn.textContent = "Bewertung senden";
+      submitBtn.textContent = BW_T.submit;
     }
   });
 });

@@ -13,22 +13,26 @@
 <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
-
 <header class="site-header">
   <nav class="nav">
     <a class="nav-brand" href="../"><img src="../assets/img/logo-mark.png" alt="NessiAirBnB Logo"> NessiAirBnB</a>
-    <button class="nav-toggle" aria-label="Menü öffnen" aria-expanded="false">&#9776;</button>
-    <ul class="nav-links">
-      <li><a href="../">Home</a></li>
-      <li><a href="../wersindwir/">Wer sind wir</a></li>
-      <li><a href="./" class="active">Lageplan</a></li>
-      <li><a href="../zimmer/">Das Zimmer</a></li>
-      <li><a href="../gaeste/">Unsere Gäste</a></li>
-      <li><a href="../kontakt/">Kontakt</a></li>
-    </ul>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="../">Home</a></li>
+        <li><a href="../wersindwir/">Wer sind wir</a></li>
+        <li><a href="./" class="active">Lageplan</a></li>
+        <li><a href="../zimmer/">Das Zimmer</a></li>
+        <li><a href="../gaeste/">Unsere Gäste</a></li>
+        <li><a href="../kontakt/">Kontakt</a></li>
+      </ul>
+      <div class="lang-switch">
+        <a href="./" class="lang-flag active" aria-label="Deutsch" title="Deutsch">🇩🇪</a>
+        <a href="../en/lageplan/" class="lang-flag" aria-label="English" title="English">🇬🇧</a>
+      </div>
+      <button class="nav-toggle" aria-label="Menü öffnen" aria-expanded="false">&#9776;</button>
+    </div>
   </nav>
 </header>
-
 <section class="page-hero">
   <div class="container">
     <span class="eyebrow">Anfahrt</span>
@@ -36,7 +40,6 @@
     <p>Stegmattweg 8b, 3315 Kräiligen &ndash; ruhig gelegen im Berner Mittelland, mit guter Anbindung an Bern, Solothurn und Zürich.</p>
   </div>
 </section>
-
 <section class="section">
   <div class="container">
     <iframe
@@ -52,7 +55,6 @@
     </div>
   </div>
 </section>
-
 <section class="section section--muted">
   <div class="container">
     <span class="eyebrow">So kommen Sie zu uns</span>
@@ -71,7 +73,6 @@
     </div>
   </div>
 </section>
-
 <footer class="site-footer">
   <div class="container">
     <div class="footer-grid">
@@ -105,7 +106,6 @@
     </div>
   </div>
 </footer>
-
 <script src="../assets/js/main.js"></script>
 </body>
 </html>

@@ -1,5 +1,20 @@
 // Opens the visitor's own email program with a pre-filled message to
 // ch.nessier@gmx.ch - no third-party service, no backend involved.
+const CONTACT_IS_EN = document.documentElement.lang === "en";
+const CONTACT_T = CONTACT_IS_EN
+  ? {
+      required: "Please fill in name, email and message.",
+      subject: "Inquiry via NessiAirBnB.ch",
+      labels: { name: "Name", email: "Email", phone: "Phone", checkin: "Check-in", checkout: "Check-out", guests: "Number of guests", message: "Message" },
+      sent: "Your email program should open now. If not, please write to us directly at ch.nessier@gmx.ch.",
+    }
+  : {
+      required: "Bitte füllen Sie Name, E-Mail und Nachricht aus.",
+      subject: "Anfrage über NessiAirBnB.ch",
+      labels: { name: "Name", email: "E-Mail", phone: "Telefon", checkin: "Anreise", checkout: "Abreise", guests: "Anzahl Gäste", message: "Nachricht" },
+      sent: "Ihr E-Mail-Programm sollte sich jetzt öffnen. Falls nicht, schreiben Sie uns direkt an ch.nessier@gmx.ch.",
+    };
+
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("contact-form");
   if (!form) return;
@@ -17,29 +32,30 @@ document.addEventListener("DOMContentLoaded", () => {
     const nachricht = form.querySelector("#nachricht").value.trim();
 
     if (!name || !email || !nachricht) {
-      status.textContent = "Bitte füllen Sie Name, E-Mail und Nachricht aus.";
+      status.textContent = CONTACT_T.required;
       status.className = "form-status show err";
       return;
     }
 
+    const L = CONTACT_T.labels;
     const bodyLines = [
-      `Name: ${name}`,
-      `E-Mail: ${email}`,
-      telefon ? `Telefon: ${telefon}` : null,
-      anreise ? `Anreise: ${anreise}` : null,
-      abreise ? `Abreise: ${abreise}` : null,
-      gaeste ? `Anzahl Gäste: ${gaeste}` : null,
+      `${L.name}: ${name}`,
+      `${L.email}: ${email}`,
+      telefon ? `${L.phone}: ${telefon}` : null,
+      anreise ? `${L.checkin}: ${anreise}` : null,
+      abreise ? `${L.checkout}: ${abreise}` : null,
+      gaeste ? `${L.guests}: ${gaeste}` : null,
       "",
-      "Nachricht:",
+      `${L.message}:`,
       nachricht,
     ].filter((line) => line !== null);
 
-    const subject = encodeURIComponent("Anfrage über NessiAirBnB.ch");
+    const subject = encodeURIComponent(CONTACT_T.subject);
     const body = encodeURIComponent(bodyLines.join("\n"));
 
     window.location.href = `mailto:ch.nessier@gmx.ch?subject=${subject}&body=${body}`;
 
-    status.textContent = "Ihr E-Mail-Programm sollte sich jetzt öffnen. Falls nicht, schreiben Sie uns direkt an ch.nessier@gmx.ch.";
+    status.textContent = CONTACT_T.sent;
     status.className = "form-status show ok";
   });
 });

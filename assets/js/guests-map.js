@@ -2,9 +2,15 @@
 // using Leaflet. The same file also feeds the review cards on the homepage -
 // only entries with lat/lng get a pin here. To update: edit that JSON file
 // and push - the map picks up changes automatically, no code changes needed.
+const MAP_IS_EN = document.documentElement.lang === "en";
+const MAP_T = MAP_IS_EN
+  ? { guests: (n) => `${n} guest${n === 1 ? "" : "s"}`, example: "(Example)" }
+  : { guests: (n) => `${n} Gast${n === 1 ? "" : "/Gäste"}`, example: "(Beispiel)" };
+
 document.addEventListener("DOMContentLoaded", async () => {
   const mapEl = document.getElementById("guests-map");
   if (!mapEl || typeof L === "undefined") return;
+  const dataSrc = mapEl.dataset.src || "../assets/data/bewertungen.json";
 
   const map = L.map(mapEl, { scrollWheelZoom: false }).setView([30, 10], 2);
 
@@ -22,7 +28,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
 
   try {
-    const res = await fetch("../assets/data/bewertungen.json", { cache: "no-store" });
+    const res = await fetch(dataSrc, { cache: "no-store" });
     const all = await res.json();
     const guests = Array.isArray(all) ? all.filter((g) => g.lat != null && g.lng != null) : [];
 
@@ -34,11 +40,11 @@ document.addEventListener("DOMContentLoaded", async () => {
       countries.add(g.land);
       const color = g.beispiel ? "#8a9a9d" : "#c08a45";
       const marker = L.marker([g.lat, g.lng], { icon: pinIcon(color) }).addTo(map);
-      const badge = g.beispiel ? " <em>(Beispiel)</em>" : "";
+      const badge = g.beispiel ? ` <em>${MAP_T.example}</em>` : "";
       const who = g.name ? `${escapeHtml(g.name)} &middot; ` : "";
       const stars = g.bewertung ? "★".repeat(g.bewertung) : "";
       marker.bindPopup(
-        `${who}<strong>${escapeHtml(g.land)}</strong>${g.ort ? " – " + escapeHtml(g.ort) : ""}<br>${g.anzahl || 0} Gast/Gäste ${stars}${badge}`
+        `${who}<strong>${escapeHtml(g.land)}</strong>${g.ort ? " – " + escapeHtml(g.ort) : ""}<br>${MAP_T.guests(g.anzahl || 0)} ${stars}${badge}`
       );
     });
 

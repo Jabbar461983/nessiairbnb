@@ -13,22 +13,26 @@
 <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
-
 <header class="site-header">
   <nav class="nav">
     <a class="nav-brand" href="../"><img src="../assets/img/logo-mark.png" alt="NessiAirBnB Logo"> NessiAirBnB</a>
-    <button class="nav-toggle" aria-label="Menü öffnen" aria-expanded="false">&#9776;</button>
-    <ul class="nav-links">
-      <li><a href="../">Home</a></li>
-      <li><a href="../wersindwir/">Wer sind wir</a></li>
-      <li><a href="../lageplan/">Lageplan</a></li>
-      <li><a href="../zimmer/">Das Zimmer</a></li>
-      <li><a href="../gaeste/">Unsere Gäste</a></li>
-      <li><a href="../kontakt/">Kontakt</a></li>
-    </ul>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="../">Home</a></li>
+        <li><a href="../wersindwir/">Wer sind wir</a></li>
+        <li><a href="../lageplan/">Lageplan</a></li>
+        <li><a href="../zimmer/">Das Zimmer</a></li>
+        <li><a href="../gaeste/">Unsere Gäste</a></li>
+        <li><a href="../kontakt/">Kontakt</a></li>
+      </ul>
+      <div class="lang-switch">
+        <a href="./" class="lang-flag active" aria-label="Deutsch" title="Deutsch">🇩🇪</a>
+        <a href="../en/bewertungen/" class="lang-flag" aria-label="English" title="English">🇬🇧</a>
+      </div>
+      <button class="nav-toggle" aria-label="Menü öffnen" aria-expanded="false">&#9776;</button>
+    </div>
   </nav>
 </header>
-
 <section class="page-hero">
   <div class="container">
     <span class="eyebrow">Für unsere Gäste</span>
@@ -36,7 +40,6 @@
     <p>Vielen Dank, dass Sie sich die Zeit nehmen, uns eine Bewertung zu hinterlassen! Diese Seite ist nicht öffentlich verlinkt &ndash; Sie haben den Link direkt von uns erhalten.</p>
   </div>
 </section>
-
 <section class="section">
   <div class="container">
     <div class="grid grid-2" style="align-items: flex-start;">
@@ -92,7 +95,6 @@
           <p class="reviews-note" style="margin-top: 12px; color: var(--c-text-muted);">Ihre Bewertung wird direkt an uns übermittelt &ndash; kein E-Mail-Programm nötig.</p>
         </form>
       </div>
-
       <div>
         <h2>Vielen Dank!</h2>
         <p>Ihre Rückmeldung hilft uns, unser Zimmer stetig zu verbessern, und zeigt zukünftigen Gästen, wie es bei uns ist. Wir freuen uns über jede Bewertung &ndash; egal ob kurz oder ausführlich.</p>
@@ -105,7 +107,6 @@
     </div>
   </div>
 </section>
-
 <footer class="site-footer">
   <div class="container">
     <div class="footer-grid">
@@ -139,7 +140,6 @@
     </div>
   </div>
 </footer>
-
 <script src="../assets/js/main.js"></script>
 <script src="../assets/js/bewertung-form.js"></script>
 </body>
