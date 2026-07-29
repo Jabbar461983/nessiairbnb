@@ -10,24 +10,34 @@
 // versions, since it also doubles as the canonical value stored in the
 // shared data file.
 const WEB3FORMS_ACCESS_KEY = "76972104-acd9-4d66-8cb2-dc374dbf2c7d";
-const BW_IS_EN = document.documentElement.lang === "en";
-const BW_T = BW_IS_EN
-  ? {
-      otherLand: "Other country (specify below)",
-      required: "Please fill in all fields and select a star rating.",
-      sending: "Sending...",
-      submit: "Send review",
-      success: "Thank you for your review! It has been sent to us.",
-      error: 'The review could not be sent automatically. Please write to us directly at <a href="mailto:ch.nessier@gmx.ch">ch.nessier@gmx.ch</a>.',
-    }
-  : {
-      otherLand: "Anderes Land (unten angeben)",
-      required: "Bitte füllen Sie alle Felder aus und wählen Sie eine Sternebewertung.",
-      sending: "Wird gesendet...",
-      submit: "Bewertung senden",
-      success: "Vielen Dank für Ihre Bewertung! Sie wurde an uns übermittelt.",
-      error: 'Die Bewertung konnte nicht automatisch gesendet werden. Bitte schreiben Sie uns direkt an <a href="mailto:ch.nessier@gmx.ch">ch.nessier@gmx.ch</a>.',
-    };
+const BW_LANG = document.documentElement.lang || "de";
+const BW_STRINGS = {
+  de: {
+    otherLand: "Anderes Land (unten angeben)",
+    required: "Bitte füllen Sie alle Felder aus und wählen Sie eine Sternebewertung.",
+    sending: "Wird gesendet...",
+    submit: "Bewertung senden",
+    success: "Vielen Dank für Ihre Bewertung! Sie wurde an uns übermittelt.",
+    error: 'Die Bewertung konnte nicht automatisch gesendet werden. Bitte schreiben Sie uns direkt an <a href="mailto:ch.nessier@gmx.ch">ch.nessier@gmx.ch</a>.',
+  },
+  en: {
+    otherLand: "Other country (specify below)",
+    required: "Please fill in all fields and select a star rating.",
+    sending: "Sending...",
+    submit: "Send review",
+    success: "Thank you for your review! It has been sent to us.",
+    error: 'The review could not be sent automatically. Please write to us directly at <a href="mailto:ch.nessier@gmx.ch">ch.nessier@gmx.ch</a>.',
+  },
+  fr: {
+    otherLand: "Autre pays (préciser ci-dessous)",
+    required: "Veuillez remplir tous les champs et choisir une note en étoiles.",
+    sending: "Envoi en cours...",
+    submit: "Envoyer l'avis",
+    success: "Merci pour votre avis! Il nous a été transmis.",
+    error: 'L\'avis n\'a pas pu être envoyé automatiquement. Merci de nous écrire directement à <a href="mailto:ch.nessier@gmx.ch">ch.nessier@gmx.ch</a>.',
+  },
+};
+const BW_T = BW_STRINGS[BW_LANG] || BW_STRINGS.de;
 
 document.addEventListener("DOMContentLoaded", async () => {
   const form = document.getElementById("bewertung-form");

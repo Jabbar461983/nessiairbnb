@@ -4,22 +4,31 @@
 // based on <html lang>; review text itself is shown as originally submitted
 // (not machine-translated) to keep quotes authentic.
 const REVIEWS_INITIAL_COUNT = 6;
-const REVIEWS_IS_EN = document.documentElement.lang === "en";
-const REVIEWS_T = REVIEWS_IS_EN
-  ? {
-      empty: "No reviews yet &ndash; check back soon!",
-      error: "Reviews could not be loaded.",
-      example: "Example",
-      stars: (n) => `${n} out of 5 stars`,
-      more: (n) => `Show ${n} more reviews`,
-    }
-  : {
-      empty: "Noch keine Bewertungen &ndash; schauen Sie bald wieder vorbei!",
-      error: "Bewertungen konnten nicht geladen werden.",
-      example: "Beispiel",
-      stars: (n) => `${n} von 5 Sternen`,
-      more: (n) => `${n} weitere Bewertungen anzeigen`,
-    };
+const REVIEWS_LANG = document.documentElement.lang || "de";
+const REVIEWS_STRINGS = {
+  de: {
+    empty: "Noch keine Bewertungen &ndash; schauen Sie bald wieder vorbei!",
+    error: "Bewertungen konnten nicht geladen werden.",
+    example: "Beispiel",
+    stars: (n) => `${n} von 5 Sternen`,
+    more: (n) => `${n} weitere Bewertungen anzeigen`,
+  },
+  en: {
+    empty: "No reviews yet &ndash; check back soon!",
+    error: "Reviews could not be loaded.",
+    example: "Example",
+    stars: (n) => `${n} out of 5 stars`,
+    more: (n) => `Show ${n} more reviews`,
+  },
+  fr: {
+    empty: "Pas encore d'avis &ndash; revenez bientôt !",
+    error: "Les avis n'ont pas pu être chargés.",
+    example: "Exemple",
+    stars: (n) => `${n} sur 5 étoiles`,
+    more: (n) => `Afficher ${n} avis supplémentaires`,
+  },
+};
+const REVIEWS_T = REVIEWS_STRINGS[REVIEWS_LANG] || REVIEWS_STRINGS.de;
 
 document.addEventListener("DOMContentLoaded", async () => {
   const wrap = document.getElementById("reviews-wrap");

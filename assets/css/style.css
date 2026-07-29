@@ -156,20 +156,26 @@ p { margin: 0 0 1em; }
 .lang-switch {
   display: flex;
   align-items: center;
-  gap: 6px;
-  padding-left: 8px;
+  gap: 2px;
+  padding-left: 10px;
+  margin-left: 2px;
   border-left: 1px solid rgba(255,255,255,0.15);
 }
 .lang-switch a {
-  font-size: 1.25rem;
+  display: block;
+  font-family: var(--font-head);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
   line-height: 1;
+  padding: 7px 9px;
+  border-radius: 999px;
   text-decoration: none;
-  opacity: 0.5;
-  filter: grayscale(0.4);
-  transition: opacity 0.15s ease, transform 0.15s ease, filter 0.15s ease;
+  color: #9aa6a3;
+  transition: background 0.15s ease, color 0.15s ease;
 }
-.lang-switch a:hover { opacity: 0.85; transform: scale(1.08); }
-.lang-switch a.active { opacity: 1; filter: none; }
+.lang-switch a:hover { background: rgba(255,255,255,0.1); color: #fff; }
+.lang-switch a.active { background: var(--c-accent); color: #fff; }
 .nav-toggle {
   display: none;
   background: none;

@@ -1,3 +1,4 @@
 User-agent: *
 Disallow: /bewertungen/
 Disallow: /en/bewertungen/
+Disallow: /fr/bewertungen/

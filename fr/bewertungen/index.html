@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Reviews &ndash; NessiAirBnB</title>
+<title>Avis &ndash; NessiAirBnB</title>
 <meta name="robots" content="noindex, nofollow">
 <link rel="icon" type="image/png" sizes="32x32" href="../../assets/img/favicon-32.png">
 <link rel="apple-touch-icon" href="../../assets/img/favicon-180.png">
@@ -18,27 +18,27 @@
     <a class="nav-brand" href="../"><img src="../../assets/img/logo-mark.png" alt="NessiAirBnB Logo"> NessiAirBnB</a>
     <div class="nav-right">
       <ul class="nav-links">
-        <li><a href="../">Home</a></li>
-        <li><a href="../wersindwir/">Who we are</a></li>
-        <li><a href="../lageplan/">Location</a></li>
-        <li><a href="../zimmer/">The Room</a></li>
-        <li><a href="../gaeste/">Our Guests</a></li>
+        <li><a href="../">Accueil</a></li>
+        <li><a href="../wersindwir/">Qui sommes-nous</a></li>
+        <li><a href="../lageplan/">Situation</a></li>
+        <li><a href="../zimmer/">La Chambre</a></li>
+        <li><a href="../gaeste/">Nos H&ocirc;tes</a></li>
         <li><a href="../kontakt/">Contact</a></li>
       </ul>
       <div class="lang-switch">
         <a href="../../bewertungen/" class="lang-pill" aria-label="Deutsch" title="Deutsch">DE</a>
-        <a href="./" class="lang-pill active" aria-label="English" title="English">EN</a>
-        <a href="../../fr/bewertungen/" class="lang-pill" aria-label="Français" title="Français">FR</a>
+        <a href="../../en/bewertungen/" class="lang-pill" aria-label="English" title="English">EN</a>
+        <a href="./" class="lang-pill active" aria-label="Français" title="Français">FR</a>
       </div>
-      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">&#9776;</button>
+      <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">&#9776;</button>
     </div>
   </nav>
 </header>
 <section class="page-hero">
   <div class="container">
-    <span class="eyebrow">For our guests</span>
-    <h1>Reviews</h1>
-    <p>Thank you for taking the time to leave us a review! This page is not publicly linked &ndash; you received this link directly from us.</p>
+    <span class="eyebrow">Pour nos h&ocirc;tes</span>
+    <h1>Avis</h1>
+    <p>Merci de prendre le temps de nous laisser un avis ! Cette page n'est pas li&eacute;e publiquement &ndash; vous avez re&ccedil;u ce lien directement de notre part.</p>
   </div>
 </section>
 <section class="section">
@@ -46,38 +46,38 @@
     <div class="grid grid-2" style="align-items: flex-start;">
       <div class="card">
         <div class="notice-box">
-          Only your <strong>first name and the first letter of your last name</strong> will be published on the website (e.g. &bdquo;Julia M.&ldquo;), together with your home country and &ndash; if provided &ndash; your city on our guest map. Your full name and message are only sent to us at first &ndash; we'll publish your review after a quick check.
+          Seuls votre <strong>pr&eacute;nom et la premi&egrave;re lettre de votre nom de famille</strong> seront publi&eacute;s sur le site (par ex. &bdquo;Julia M.&ldquo;), ainsi que votre pays d'origine et &ndash; si indiqu&eacute;e &ndash; votre ville sur notre carte des h&ocirc;tes. Votre nom complet et votre message ne sont d'abord envoy&eacute;s qu'&agrave; nous &ndash; nous publions ensuite votre avis apr&egrave;s v&eacute;rification.
         </div>
         <form id="bewertung-form">
           <div class="form-grid">
             <div>
-              <label for="vorname">First name *</label>
+              <label for="vorname">Pr&eacute;nom *</label>
               <input type="text" id="vorname" required>
             </div>
             <div>
-              <label for="nachname">Last name *</label>
+              <label for="nachname">Nom de famille *</label>
               <input type="text" id="nachname" required>
             </div>
             <div>
-              <label for="herkunft">Country *</label>
+              <label for="herkunft">Pays *</label>
               <select id="herkunft" data-src="../../assets/data/countries.json" required>
-                <option value="" disabled selected>Please select&hellip;</option>
+                <option value="" disabled selected>Veuillez choisir&hellip;</option>
               </select>
             </div>
             <div>
-              <label for="ort">City</label>
-              <input type="text" id="ort" placeholder="e.g. Zurich">
+              <label for="ort">Ville</label>
+              <input type="text" id="ort" placeholder="p. ex. Zurich">
             </div>
             <div class="full" id="herkunft-other-wrap" style="display:none;">
-              <label for="herkunft-other">Country (if not in the list)</label>
-              <input type="text" id="herkunft-other" placeholder="e.g. your home country">
+              <label for="herkunft-other">Pays (si absent de la liste)</label>
+              <input type="text" id="herkunft-other" placeholder="p. ex. votre pays d'origine">
             </div>
             <div>
-              <label for="anzahl">Number of guests *</label>
+              <label for="anzahl">Nombre de personnes *</label>
               <input type="number" id="anzahl" min="1" value="1" required>
             </div>
             <div class="full">
-              <label>How did you like it? *</label>
+              <label>Comment avez-vous trouv&eacute; votre s&eacute;jour ? *</label>
               <div class="star-rating">
                 <input type="radio" id="star5" name="sterne" value="5"><label for="star5">★</label>
                 <input type="radio" id="star4" name="sterne" value="4"><label for="star4">★</label>
@@ -87,19 +87,19 @@
               </div>
             </div>
             <div class="full">
-              <label for="freitext">Your review *</label>
-              <textarea id="freitext" required placeholder="Tell us about your stay..."></textarea>
+              <label for="freitext">Votre avis *</label>
+              <textarea id="freitext" required placeholder="Parlez-nous de votre séjour..."></textarea>
             </div>
           </div>
-          <button class="btn btn-primary" type="submit" style="margin-top: 20px;">Send review</button>
+          <button class="btn btn-primary" type="submit" style="margin-top: 20px;">Envoyer l'avis</button>
           <div id="form-status" class="form-status"></div>
-          <p class="reviews-note" style="margin-top: 12px; color: var(--c-text-muted);">Your review is sent directly to us &ndash; no email program needed.</p>
+          <p class="reviews-note" style="margin-top: 12px; color: var(--c-text-muted);">Votre avis nous est transmis directement &ndash; aucun programme de messagerie n&eacute;cessaire.</p>
         </form>
       </div>
       <div>
-        <h2>Thank you!</h2>
-        <p>Your feedback helps us keep improving our room, and shows future guests what it's like to stay with us. We appreciate every review &ndash; short or detailed.</p>
-        <p>If you have any questions, you can always reach us directly:</p>
+        <h2>Merci !</h2>
+        <p>Vos retours nous aident &agrave; am&eacute;liorer continuellement notre chambre et montrent aux futurs h&ocirc;tes &agrave; quoi ressemble un s&eacute;jour chez nous. Nous appr&eacute;cions chaque avis &ndash; court ou d&eacute;taill&eacute;.</p>
+        <p>Pour toute question, vous pouvez toujours nous joindre directement&nbsp;:</p>
         <div class="contact-alt">
           <a href="mailto:ch.nessier@gmx.ch">✉️ ch.nessier@gmx.ch</a>
           <a href="tel:+41793679995">📞 +41 79 367 99 95</a>
@@ -113,23 +113,23 @@
     <div class="footer-grid">
       <div>
         <h4>NessiAirBnB</h4>
-        <p>Cosy family room in Kräiligen &ndash; your quiet retreat in the Bern Mittelland.</p>
+        <p>Chambre familiale chaleureuse &agrave; Kr&auml;iligen &ndash; votre havre de paix dans le Mittelland bernois.</p>
       </div>
       <div>
         <h4>Navigation</h4>
         <ul>
-          <li><a href="../">Home</a></li>
-          <li><a href="../wersindwir/">Who we are</a></li>
-          <li><a href="../lageplan/">Location</a></li>
-          <li><a href="../zimmer/">The Room</a></li>
-          <li><a href="../gaeste/">Our Guests</a></li>
+          <li><a href="../">Accueil</a></li>
+          <li><a href="../wersindwir/">Qui sommes-nous</a></li>
+          <li><a href="../lageplan/">Situation</a></li>
+          <li><a href="../zimmer/">La Chambre</a></li>
+          <li><a href="../gaeste/">Nos H&ocirc;tes</a></li>
           <li><a href="../kontakt/">Contact</a></li>
         </ul>
       </div>
       <div>
         <h4>Contact</h4>
         <ul>
-          <li>Stegmattweg 8b, 3315 Kräiligen</li>
+          <li>Stegmattweg 8b, 3315 Kr&auml;iligen</li>
           <li><a href="tel:+41793679995">+41 79 367 99 95</a></li>
           <li><a href="mailto:ch.nessier@gmx.ch">ch.nessier@gmx.ch</a></li>
         </ul>
@@ -137,7 +137,7 @@
     </div>
     <div class="footer-bottom">
       <span>&copy; <span id="year"></span> NessiAirBnB &ndash; Christian, Noemie &amp; Leo</span>
-      <span>Family room in Kräiligen, Switzerland</span>
+      <span>Chambre familiale &agrave; Kr&auml;iligen, Suisse</span>
     </div>
   </div>
 </footer>

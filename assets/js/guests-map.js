@@ -2,10 +2,13 @@
 // using Leaflet. The same file also feeds the review cards on the homepage -
 // only entries with lat/lng get a pin here. To update: edit that JSON file
 // and push - the map picks up changes automatically, no code changes needed.
-const MAP_IS_EN = document.documentElement.lang === "en";
-const MAP_T = MAP_IS_EN
-  ? { guests: (n) => `${n} guest${n === 1 ? "" : "s"}`, example: "(Example)" }
-  : { guests: (n) => `${n} Gast${n === 1 ? "" : "/Gäste"}`, example: "(Beispiel)" };
+const MAP_LANG = document.documentElement.lang || "de";
+const MAP_STRINGS = {
+  de: { guests: (n) => `${n} Gast${n === 1 ? "" : "/Gäste"}`, example: "(Beispiel)" },
+  en: { guests: (n) => `${n} guest${n === 1 ? "" : "s"}`, example: "(Example)" },
+  fr: { guests: (n) => `${n} invité${n === 1 ? "" : "s"}`, example: "(Exemple)" },
+};
+const MAP_T = MAP_STRINGS[MAP_LANG] || MAP_STRINGS.de;
 
 document.addEventListener("DOMContentLoaded", async () => {
   const mapEl = document.getElementById("guests-map");
