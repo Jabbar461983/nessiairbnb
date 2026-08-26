@@ -9,7 +9,7 @@
 <link rel="apple-touch-icon" href="assets/img/favicon-180.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -36,7 +36,7 @@
 </header>
 <section class="hero">
   <div class="container">
-    <div>
+    <div class="hero-text reveal">
       <span class="eyebrow">Familienzimmer in Kräiligen</span>
       <h1>Ihr ruhiger Rückzugsort im Berner Mittelland</h1>
       <p class="lead">Wir vermieten ein gemütliches Zimmer im Untergeschoss unseres Hauses in Kräiligen &ndash; mit eigenem, privatem Badezimmer im Erdgeschoss, Parkplatz direkt vor dem Haus und einer herzlichen Portion Gastfreundschaft von uns als junge Familie.</p>
@@ -44,34 +44,34 @@
         <a class="btn btn-primary" href="kontakt/">Jetzt anfragen</a>
         <a class="btn btn-outline" href="zimmer/">Zimmer ansehen</a>
       </div>
-    </div>
-    <div class="hero-card">
-      <img src="assets/img/zimmer/Schlafzimmer.svg" alt="Unser gemütliches Familienzimmer">
       <ul class="hero-facts">
         <li><span class="dot"></span> Zimmer im Untergeschoss, eigenes Bad im Erdgeschoss</li>
         <li><span class="dot"></span> Parkplatz direkt vor dem Haus vorhanden</li>
         <li><span class="dot"></span> Ab CHF 75.&ndash; / Nacht, + CHF 15.&ndash; pro weiterem Gast</li>
       </ul>
     </div>
+    <div class="hero-photo reveal reveal-d1">
+      <img src="assets/img/zimmer/schlafzimmer.jpg" alt="Unser gemütliches Familienzimmer" loading="lazy">
+    </div>
   </div>
 </section>
 <section class="section">
   <div class="container">
     <span class="eyebrow">Auf einen Blick</span>
-    <h2 class="reveal">Warum bei uns übernachten?</h2>
+    <h2>Warum bei uns übernachten?</h2>
     <div class="grid grid-3" style="margin-top: 28px;">
-      <div class="card reveal reveal-d1">
-        <div class="icon-badge">🛏️</div>
+      <div class="card">
+        <div class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 18v-7a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v7"/><path d="M2 18h20"/><path d="M4 9V6a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v3"/><path d="M2 22v-4"/><path d="M22 22v-4"/></svg></div>
         <h3>Gemütlich &amp; ruhig</h3>
         <p>Ein liebevoll eingerichtetes Zimmer mit Bodenheizung &ndash; der perfekte Rückzugsort nach einem erlebnisreichen Tag.</p>
       </div>
-      <div class="card reveal reveal-d2">
-        <div class="icon-badge">🚿</div>
+      <div class="card">
+        <div class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21.5c3.5 0 6.5-2.8 6.5-6.5 0-3.2-2.6-6.2-4.6-8.7C13 5.2 12.4 4 12 2.5c-.4 1.5-1 2.7-1.9 3.8C8.1 8.8 5.5 11.8 5.5 15c0 3.7 3 6.5 6.5 6.5z"/></svg></div>
         <h3>Privates Badezimmer</h3>
         <p>Ihr eigenes Badezimmer im Erdgeschoss steht exklusiv Ihnen zur Verfügung.</p>
       </div>
-      <div class="card reveal reveal-d3">
-        <div class="icon-badge">🚗</div>
+      <div class="card">
+        <div class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 11 6.5 6.5A2 2 0 0 1 8.4 5h7.2a2 2 0 0 1 1.9 1.5L19 11"/><rect x="2.5" y="11" width="19" height="6.5" rx="2"/><circle cx="7" cy="17.5" r="1.7"/><circle cx="17" cy="17.5" r="1.7"/></svg></div>
         <h3>Parkplatz inklusive</h3>
         <p>Direkt vor dem Haus steht Ihnen ein kostenloser Parkplatz zur Verfügung.</p>
       </div>
@@ -81,17 +81,16 @@
 <section class="section section--dark">
   <div class="container">
     <span class="eyebrow">Stimmen unserer Gäste</span>
-    <h2 class="reveal">Das sagen unsere Gäste</h2>
+    <h2>Das sagen unsere Gäste</h2>
     <div id="reviews-wrap" class="reviews-wrap" data-src="assets/data/bewertungen.json" data-mode="carousel" aria-live="polite">
       <p class="reviews-note">Bewertungen werden geladen&hellip;</p>
     </div>
     <div id="reviews-more" style="margin-top: 20px;"></div>
-    <p class="reviews-note">Diese Kommentare werden laufend gepflegt und lassen sich jederzeit in <code>assets/data/bewertungen.json</code> aktualisieren.</p>
   </div>
 </section>
 <section class="section section--muted">
   <div class="container text-center">
-    <h2 class="reveal">Neugierig geworden?</h2>
+    <h2>Neugierig geworden?</h2>
     <p class="max-w" style="margin: 0 auto 24px;">Lernen Sie uns kennen, werfen Sie einen Blick auf das Zimmer oder schreiben Sie uns direkt eine Nachricht &ndash; wir freuen uns auf Sie!</p>
     <div class="hero-actions" style="justify-content: center;">
       <a class="btn btn-dark" href="wersindwir/">Wer sind wir</a>
